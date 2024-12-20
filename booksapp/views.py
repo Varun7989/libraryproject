@@ -12,7 +12,7 @@ def book_list(request):
         serializer = booksserializers( data=request.data)
         if serializer.is_valid():
             serializer.save()          
-        return Response(serializer.data)
+        return Response(serializer.data) 
     return Response(serializer.errors)
 
 @api_view(['GET','PUT','DELETE'])
