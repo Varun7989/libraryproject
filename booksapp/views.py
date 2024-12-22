@@ -29,5 +29,5 @@ def book_id(request,id):
         return Response(serializer.errors)
     elif request.method == 'DELETE':
         book_list.delete() 
-        return Response(status = status.HTTP_204_NO_CONTENT)  
+        return Response(status = status.HTTP_204_NO_CONTENT)   
     return Response(serializer.data)          
