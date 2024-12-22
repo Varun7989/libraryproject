@@ -14,7 +14,7 @@ def book_list(request):
         return Response(serializer.data) 
     return Response(serializer.errors)
 
-@api_view(['GET','PUT','DELETE'])
+@api_view(['GET','PUT','DELETE']) 
 def book_id(request,id):
     book_list = Book.objects.get(pk=id)
 
@@ -28,6 +28,6 @@ def book_id(request,id):
             return Response(serializer.data)
         return Response(serializer.errors)
     elif request.method == 'DELETE':
-        book_list.delete()
-        return Response(status = status.HTTP_204_NO_CONTENT) 
-    return Response(serializer.data)    
+        book_list.delete() 
+        return Response(status = status.HTTP_204_NO_CONTENT)  
+    return Response(serializer.data)          
